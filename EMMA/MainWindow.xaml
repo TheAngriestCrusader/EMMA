@@ -8,15 +8,15 @@
         mc:Ignorable="d"
         Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024">
     <Grid>
-        
         <Grid>
-            
             <Grid.RowDefinitions>
                 <!-- Navigation bar -->
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             
-            <navigation-Bar:NavigationBar Grid.Row="0" />
+            <Border Grid.Row="0" BorderBrush="#000000" BorderThickness="0, 0, 0, 1" Padding="8">
+                <navigation-Bar:NavigationBar />
+            </Border>
             
         </Grid>
 
