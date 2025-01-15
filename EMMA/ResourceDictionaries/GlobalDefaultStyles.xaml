@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:media="clr-namespace:System.Media;assembly=System.Windows.Extensions">
     <!-- Set JetBrains Mono as a static resource -->
     <FontFamily x:Key="JetBrainsMonoFontFamily">
         pack://application:,,,/Resources/FontFamilies/JetBrainsMono-2.304/fonts/ttf/#JetBrains Mono
@@ -9,6 +10,48 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontFamily" Value="{StaticResource JetBrainsMonoFontFamily}" />
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+        
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                <!-- Start increasing the scale -->
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.1" Duration="0:0:0.1" />
+                        
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.1" Duration="0:0:0.1" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            
+            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                <!-- Start decreasing the scale -->
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.0" Duration="0:0:0.1" />
+                        
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.0" Duration="0:0:0.1" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
     </Style>
     
     <Style TargetType="TextBlock">
