@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
             
             <Border Grid.Row="0" BorderBrush="#000000" BorderThickness="0, 0, 0, 1" Padding="8">
-                <navigation-Bar:NavigationBar Name="NavigationBar" />
+                <navigation-Bar:NavigationBar x:Name="NavigationBar" />
             </Border>
             
             <Frame Grid.Row="1" Name="MainFrame" />
