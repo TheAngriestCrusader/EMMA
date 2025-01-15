@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="EMMA.UserControls.NavigationBar.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMMA.UserControls.NavigationBar"
+             mc:Ignorable="d"
+             d:DesignHeight="58" d:DesignWidth="1024">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Home button -->
+            <ColumnDefinition Width="Auto" />
+            <!-- Title text block -->
+            <ColumnDefinition Width="*" />
+            <!-- Settings button -->
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <Button Grid.Column="0" Name="HomeButton" Content="Home" />
+        <TextBlock Grid.Column="1" Name="TitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Text="Placeholder" />
+        <Button Grid.Column="2" Name="SettingsButton" Content="Settings" />
+    </Grid>
+</UserControl>
