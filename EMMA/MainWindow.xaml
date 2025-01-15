@@ -3,10 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:navigation-Bar="clr-namespace:EMMA.UserControls.NavigationBar"
         xmlns:local="clr-namespace:EMMA"
         mc:Ignorable="d"
-        Title="Efficient Management and Monitoring Assistant" Height="450" Width="800">
+        Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024">
     <Grid>
+        
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <!-- Navigation bar -->
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <navigation-Bar:NavigationBar Grid.Row="0" />
+            
+        </Grid>
 
     </Grid>
 </Window>
