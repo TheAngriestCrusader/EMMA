@@ -6,7 +6,16 @@
         xmlns:navigation-Bar="clr-namespace:EMMA.UserControls.NavigationBar"
         xmlns:local="clr-namespace:EMMA"
         mc:Ignorable="d"
-        Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024">
+        Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    <Window.Background>
+        <LinearGradientBrush Opacity="0.5">
+            <GradientStop Color="#bbddff" Offset="0.0" />
+            <GradientStop Color="#77bbff" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +25,15 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             
-            <Border Grid.Row="0" BorderBrush="#000000" BorderThickness="0, 0, 0, 1" Padding="8">
+            <Border Grid.Row="0" BorderBrush="#000000" BorderThickness="0, 0, 0, 1"
+                    MouseLeftButtonDown="DragMoveWindow" Padding="8">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#bbddff" Offset="0.0" />
+                        <GradientStop Color="#77bbff" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
                 <navigation-Bar:NavigationBar x:Name="NavigationBar" />
             </Border>
             

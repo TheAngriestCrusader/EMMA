@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:EMMA.UserControls.NavigationBar"
              mc:Ignorable="d"
              d:DesignHeight="58" d:DesignWidth="1024">
+    
     <UserControl.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="Padding" Value="16" />
@@ -16,15 +17,23 @@
         <Grid.ColumnDefinitions>
             <!-- Home button -->
             <ColumnDefinition Width="Auto" />
+            <!-- Settings button -->
+            <ColumnDefinition Width="Auto" />
             <!-- Title text block -->
             <ColumnDefinition Width="*" />
-            <!-- Settings button -->
+            <!-- Window operations stack panel -->
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         
-        <Button Grid.Column="0" Name="HomeButton" Content="Home" />
-        <TextBlock Grid.Column="1" Name="TitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Button Grid.Column="0" Name="HomeButton" Content="Home" Margin="16, 0, 16, 0" Padding="16" />
+        <Button Grid.Column="1" Name="SettingsButton" Content="Settings" Padding="16" />
+        <TextBlock Grid.Column="2" Name="TitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"
                    Text="Placeholder" />
-        <Button Grid.Column="2" Name="SettingsButton" Content="Settings" />
+        
+        <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="MinimiseButton" Click="OnMinimiseButtonPress" Content="-" Margin="8" />
+            <Button Name="MaximiseButton" Click="OnMaximiseButtonPress" Content="+" Margin="8" />
+            <Button Name="ExitButton" Click="OnExitButtonPress" Content="x" Margin="8" />
+        </StackPanel>
     </Grid>
 </UserControl>
