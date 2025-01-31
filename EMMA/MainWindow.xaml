@@ -6,7 +6,7 @@
         xmlns:navigation-Bar="clr-namespace:EMMA.UserControls.NavigationBar"
         xmlns:local="clr-namespace:EMMA"
         mc:Ignorable="d"
-        Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024">
+        Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024" MinHeight="360" MinWidth="640">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
