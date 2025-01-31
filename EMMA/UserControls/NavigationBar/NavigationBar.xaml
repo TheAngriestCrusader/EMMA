@@ -23,8 +23,8 @@
         </Grid.ColumnDefinitions>
         
         <Button Grid.Column="0" Name="HomeButton" Content="Home" />
-        <TextBlock Grid.Column="1" Name="TitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Text="Placeholder" />
+        <TextBlock Grid.Column="1" Name="TitleTextBlock" FontSize="16" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Text="Placeholder" />
         <Button Grid.Column="2" Name="SettingsButton" Content="Settings" />
     </Grid>
 </UserControl>
