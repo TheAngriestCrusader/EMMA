@@ -10,6 +10,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontFamily" Value="{StaticResource JetBrainsMonoFontFamily}" />
         <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -29,27 +30,46 @@
         </Setter>
         
         <Style.Triggers>
-            <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                <!-- Start increasing the scale -->
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.1" Duration="0:0:0.1" />
-                        
-                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.1" Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-            
-            <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                <!-- Start decreasing the scale -->
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.0" Duration="0:0:0.1" />
-                        
-                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.0" Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
+            <!-- Hover Effect -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <!-- Pressed Effect -->
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <!-- Return to 1.05 if still hovered after press -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsPressed" Value="False"/>
+                </MultiTrigger.Conditions>
+                
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+
+            <!-- Default state when not hovered -->
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
         </Style.Triggers>
     </Style>
     
