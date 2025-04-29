@@ -9,6 +9,7 @@
       Title="Home">
 
     <Grid>
-        
+        <Label Content="Home Page Test Label" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
     </Grid>
 </Page>
