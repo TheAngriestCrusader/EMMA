@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:navigation-Bar="clr-namespace:EMMA.UserControls.NavigationBar"
+        xmlns:navigationBar="clr-namespace:EMMA.UserControls.NavigationBar"
         xmlns:local="clr-namespace:EMMA"
         mc:Ignorable="d"
         Title="Efficient Management and Monitoring Assistant" Height="576" Width="1024" MinHeight="360" MinWidth="640">
@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
             
             <Border Grid.Row="0" BorderBrush="#000000" BorderThickness="0, 0, 0, 1">
-                <navigation-Bar:NavigationBar x:Name="NavigationBar" />
+                <navigationBar:NavigationBar x:Name="NavigationBar" />
             </Border>
             
             <Frame Grid.Row="1" Name="MainFrame" />
