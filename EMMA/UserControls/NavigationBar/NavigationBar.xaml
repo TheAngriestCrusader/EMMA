@@ -22,9 +22,9 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         
-        <Button Grid.Column="0" Name="HomeButton" Content="Home" Margin="8, 0, 0, 0" />
+        <Button Grid.Column="0" Name="HomeButton" Content="Home" Margin="16, 0, 8, 0" />
         <TextBlock Grid.Column="1" Name="TitleTextBlock" FontSize="16" Padding="0, 8, 0, 8"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Text="Empty" />
-        <Button Grid.Column="2" Name="SettingsButton" Content="Settings" Margin="0, 0, 8, 0"/>
+        <Button Grid.Column="2" Name="SettingsButton" Content="Settings" Margin="8, 0, 16, 0"/>
     </Grid>
 </UserControl>
