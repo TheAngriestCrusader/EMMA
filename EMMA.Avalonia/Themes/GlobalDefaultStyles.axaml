@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style Selector="Control, TextBlock">
+		<Setter Property="FontFamily" Value="{StaticResource JetBrainsMono}" />
+	</Style>
+
+	<!-- Button default style -->
+	<Style Selector="Button">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+		<Setter Property="RenderTransform">
+			<ScaleTransform ScaleX="1" ScaleY="1" />
+		</Setter>
+	</Style>
+
+	<!-- Hover state -->
+	<Style Selector="Button:hover">
+		<Setter Property="RenderTransform">
+			<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+		</Setter>
+	</Style>
+
+	<!-- Pressed state -->
+	<Style Selector="Button:pressed">
+		<Setter Property="RenderTransform">
+			<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+		</Setter>
+	</Style>
+
+</Styles>

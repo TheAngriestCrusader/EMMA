@@ -5,5 +5,5 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="EMMA.Avalonia.MainWindow"
         Title="EMMA.Avalonia">
-    Welcome to Avalonia!
+	<Label>Welcome!</Label>
 </Window>
