@@ -20,7 +20,7 @@
                 <navigationBar:NavigationBar x:Name="NavigationBar" />
             </Border>
             
-            <Frame Grid.Row="1" Name="MainFrame" />
+            <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" />
         </Grid>
     </Grid>
 </Window>
